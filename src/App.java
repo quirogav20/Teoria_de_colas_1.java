@@ -43,11 +43,35 @@ public class App {
                 }
                 break;
                 case 2:{
+                    System.out.println("---------------------------------");
+                    System.out.println();
+                    System.out.println("    Modelo M/M/1/k"   );
+                    System.out.println();
+                    System.out.println("Ingrese la tasa de llegada (λ): ");
+                    double lambda = lector.nextDouble();
+                    System.out.println("Ingrese la tasa de servicio (μ): ");
+                    double miu = lector.nextDouble();
+                    System.out.println("Ingrese la capacidad del sistema (k): ");
+                    int k = lector.nextInt();
+                    System.out.println();
+                    double p=lambda/miu;
+                    System.out.println("Ocupación del sistema (ρ): "+p);
+                    double Po = (1 - p) / (1 - Math.pow(p, k + 1));
+                    System.out.println("Probabilidad de que no haya clientes en el sistema (Po): "+Po);
+                    double Pk = (Math.pow(p,k)*Po);
+                    System.out.println("Probabilidad de que el sistema esté lleno (Pk): "+Pk);
+                    double tasa_efectiva = lambda * (1 - Pk);
+                    System.out.println("Tasa efectiva de llegada (Tasa efectiva): "+tasa_efectiva);
+                    double L = (p * (1 - (k + 1) * Math.pow(p, k) + k * Math.pow(p, k + 1))) / ((1 - p) * (1 - Math.pow(p, k + 1)));
+                    System.out.println("Número promedio de clientes en el sistema (L): "+L+" clientes");
+                    double W = L / (lambda * (1 - Po));
+                    System.out.println("Tiempo promedio en el sistema (W): "+W+ " hrs"+" o "+ W*60+" minutos");
+                    
 
                 } 
                 break;
                 case 3:{
-
+                    
                 }
                 break;
 
