@@ -9,7 +9,7 @@ public class App {
         do{
             System.out.println("---------------------------------");
             System.out.println();
-            System.out.println("Bienvenido a Teoría de Colas: ");
+            System.out.println("    Bienvenido a Teoría de Colas    ");
             System.out.println("------Menú------" );
             System.out.println("Selecciona una opción: ");
             System.out.println("1. Modelo M/M/1");
