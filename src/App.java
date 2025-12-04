@@ -37,9 +37,9 @@ public class App {
                     double L = lambda/(miu - lambda);
                     System.out.println("Número promedio de clientes en el sistema (L): "+L+" clientes");
                     double Wq = Lq / lambda;
-                    System.out.println("Tiempo promedio en el sistema (Wq): "+Wq+ " hrs"+" o "+ Wq*60+" minutos");
+                    System.out.println("Tiempo promedio en la cola (Wq): "+Wq+ " hrs"+" o "+ Wq*60+" minutos");
                     double W = Wq + (1/miu);
-                    System.out.println("Tiempo promedio en la cola (W): "+W+ " hrs"+" o "+ W*60+" minutos");
+                    System.out.println("Tiempo promedio en el sistema (W): "+W+ " hrs"+" o "+ W*60+" minutos");
                 }
                 break;
                 case 2:{
