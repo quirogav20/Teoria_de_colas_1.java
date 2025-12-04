@@ -7,17 +7,21 @@ public class App {
         Scanner lector = new Scanner(System.in);
         int option=0;
         do{
+            System.out.println("---------------------------------");
+            System.out.println();
             System.out.println("Bienvenido a Teoría de Colas: ");
             System.out.println("------Menú------" );
-            System.out.println("Seleccione una opción: ");
+            System.out.println("Selecciona una opción: ");
             System.out.println("1. Modelo M/M/1");
-            System.out.println("2. Modelo M/M/3");
+            System.out.println("2. Modelo M/M/1/k");
             System.out.println("3. Modelo M/M/c");
             System.out.println("4. Salir");
 
             option = lector.nextInt();
             switch(option){
                 case 1:{
+                    System.out.println("---------------------------------");
+                    System.out.println();
                     System.out.println("    Modelo M/M/1"   );
                     System.out.println();
                     System.out.println();
@@ -25,7 +29,8 @@ public class App {
                     double lambda = lector.nextDouble();
                     System.out.println("Ingrese la tasa de servicio (μ): ");
                     double miu = lector.nextDouble();
-                    double p=lambda/miu;
+                    System.out.println();
+                    double p=lambda/miu;                
                     System.out.println("Ocupación del sistema (ρ): "+p);
                     double Lq = (Math.pow(lambda, 2)) / (miu * (miu - lambda));
                     System.out.println("Número promedio de clientes en el cola (Lq): "+Lq+" clientes");
@@ -45,11 +50,9 @@ public class App {
 
                 }
                 break;
-                case 4:{
 
-                }
-                break;
 
+                
                 default:
                 System.out.println("Opción no invalida");
             }
