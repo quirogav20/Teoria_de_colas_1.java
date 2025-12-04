@@ -85,8 +85,14 @@ public class App {
                     double p=lambda/(c*miu);
                     System.out.println("Ocupación del sistema (ρ): "+p);
                     double a = lambda / miu;
-                    double sum = 0.0;
-                    double Pespera = Math.pow(a, c) / (factorial(c)*(1 - p));
+                    double sum=0;
+                    double Po= 0;
+                    for(int n=0; n<c; n++){
+                        sum += (Math.pow(a, n)) / factorial(n);
+                    }
+                    Po = 1 / (sum + (Math.pow(a, c) / (factorial(c) * (1 - (a / c)))));
+                    System.out.println("Probabilidad de que no haya clientes en el sistema (Po): "+Po);
+                    double Pespera = (Math.pow(a, c) / (factorial(c)*(1 - p))*(Po));
                     System.out.println("Probabilidad de espera (Pespera): "+Pespera);
                     double Lq = (Pespera * p) / (1 - p);
                     System.out.println("Número promedio de clientes en la cola (Lq): "+Lq+" clientes");
@@ -98,11 +104,7 @@ public class App {
                     System.out.println("Tiempo promedio en el sistema (W): "+W+ " hrs"+" o "+ W*60+" minutos");
                 }
                 break;
-
-
-                
-                default:
-                System.out.println("Opción no invalida");
+ 
             }
 
         }while(option != 4);
